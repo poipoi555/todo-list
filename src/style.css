@@ -1,0 +1,185 @@
+.raleway-cute {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.everything {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90vh;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-family: 'Raleway', 'Times New Roman', 'serif';
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    border-right: 1px solid lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 17%;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 80%;
+}
+
+.all, .clear-all {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.view-all, .delete-title {
+    font-size: 23px;
+}
+
+.view-all-button, .delete {
+    padding: 8px;
+}
+
+.add-button {
+    background-color: lightgreen;
+    width: 60px;
+    height: 49px;
+    font-size: 30px; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-cancel {
+    width: 20%;
+    height: 80%;
+}
+
+.create {
+    width: 60px;
+    height: 35px;
+    margin-top: 12px;
+}
+
+.add-button:hover, .popup-cancel:hover, .create:hover, .view-all-button:hover, .delete:hover {
+    border-color: #3498db;
+    background-color: rgb(28, 159, 28);
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 40px;
+    background-color: azure; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.right-header {
+    display: flex;
+    flex-direction: row; 
+    gap: 24px; 
+    width: 100%;
+    height: 94px;
+    margin-bottom: 20px; 
+}
+
+.todos {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 20px; 
+    width: 100%; 
+}
+
+.todos > * {
+    border: 1px solid gray;
+    text-align: center;
+    padding: 12px;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.overlay {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: none;
+    justify-content: center;
+}
+
+.popup {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.popup > .header {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.prio-1 {
+    background-color: #ccffcc;
+}
+
+.prio-2 {
+    background-color: #b3ffb3;
+}
+
+.prio-3 {
+    background-color: #99ff99;
+}
+
+.prio-4 {
+    background-color: #80ff80;
+}
+
+.prio-5 {
+    background-color: #66ff66;
+}

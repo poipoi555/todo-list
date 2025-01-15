@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="everything">
+        <div class="container">
+            <div class="left">
+                <div class="title" style="font-size: 40px; font-weight: bold;">To-Do List</div>
+                <div class="projects">
+                    <label for="project-dropdown" style="font-size: 23px;">Select a project!</label>
+                    <select name="project-dropdown" id="project-dropdown" style="font-size: 18px;">
+                        <option value="" disabled selected>Select an option</option>
+    
+                    </select>
+                    <div class="all">
+                        <div class="view-all">View all projects!</div>
+                        <button class="view-all-button">All Projects</button>
+                    </div>
+                    <div class="clear-all">
+                        <div class="delete-title">Clear all to-dos!</div>
+                        <button class="delete">Clear All</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-header">
+                    <div class="home" style="font-size: 40px; font-weight: bold;">My To-Dos</div>
+                    <button class="add-button">+</button>
+                </div>
+                <div class="todos">
+                    <!-- Todos content goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="popup">
+            <div class="header">
+                <div class="title">New List</div>
+                <button class="popup-cancel">x</button>
+            </div>
+            <div class="popup-class">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="title">
+            </div>
+            <div class="popup-class">
+                <label for="description">Description (brief)</label>
+                <input type="text" id="description" name="description">
+            </div>
+            <div class="popup-class">
+                <label for="duedate">Due Date (yyyy-MM-dd)</label>
+                <input type="text" id="duedate" name="duedate">
+            </div>
+            <div class="popup-class">
+                <label for="project-dropdown">Select a Project</label>
+                <select name="project-dropdown" id="project-dropdown">
+                    <option value="" disabled selected>Select an option</option>
+
+                </select>
+            </div>
+            <div class="popup-class">
+                <label for="new-project">New Project</label>
+                <input type="text" id="new-project" name="new-project">
+            </div>
+            <div class="popup-class">
+                <label for="priority">Priority (1-5)</label>
+                <input type="text" id="priority" name="priority">
+            </div>
+            <button class="create">Create</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

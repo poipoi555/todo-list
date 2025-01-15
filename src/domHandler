@@ -1,0 +1,67 @@
+import { createTodo } from './todoHandler';
+import { todos, emptyTodos } from './index.js';
+import { filterTodos, updateTodoDisplay, displayTodos } from './display.js';
+
+
+function setupEventListeners() {
+    const addButton = document.querySelector(".add-button");
+    const popup = document.querySelector(".overlay");
+
+    addButton.addEventListener("click", () => {
+        popup.style.display = "flex";
+    });
+
+    const exitButton = document.querySelector(".popup-cancel");
+    exitButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        const nameInput = document.querySelector("#name");
+        const descriptionInput = document.querySelector("#description");
+        const dueDateInput = document.querySelector("#duedate");
+        const priorityInput = document.querySelector("#priority");
+
+        // Clear each input field
+        nameInput.value = "";
+        descriptionInput.value = "";
+        dueDateInput.value = "";
+        priorityInput.value = ""; 
+    });
+
+    const submitButton = document.querySelector(".create");
+    submitButton.addEventListener("click", createTodo);
+
+    const displayAllButton = document.querySelector(".view-all-button");
+    displayAllButton.addEventListener("click", () => {
+        const dropdown = document.querySelector("#project-dropdown");
+        dropdown.value = "";
+        displayTodos(todos);
+    });
+
+    const projDropdown = document.querySelector("#project-dropdown");
+    const newProjInput = document.querySelector("#new-project");
+
+    projDropdown.addEventListener("change", (event) => {
+        if (projDropdown.value) {
+            newProjInput.disabled = true; 
+            newProjInput.value = ""; 
+        } else {
+            newProjInput.disabled = false; 
+        }
+        const selectedProj = event.target.value;
+        console.log(`you selected ${selectedProj}`);
+
+        let todosToDisplay = filterTodos(todos, selectedProj);
+        updateTodoDisplay(todosToDisplay);
+    });
+
+    const deleteButton = document.querySelector(".delete");
+    deleteButton.addEventListener("click", () => {
+        const allTodos = document.querySelector(".todos");
+        allTodos.innerHTML = "";
+        emptyTodos();
+        localStorage.clear();
+    });
+
+    document.addEventListener("DOMContentLoaded", displayTodos(todos));
+}
+
+export { setupEventListeners };
